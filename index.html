@@ -192,6 +192,112 @@
             </div>
         </section>
 
+        <section id="problem-solver" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4 text-center">
+                <span class="text-blue-600 font-semibold uppercase tracking-wide">AI Integration</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-2">AI-Powered Problem Solver</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto mb-10">Ask a question, upload an image of a problem, and get
+                    an instant solution.</p>
+
+                <div class="glass-card p-6 md:p-10 max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <div>
+                            <label for="user-question" class="block text-left text-slate-700 font-medium mb-2">Your
+                                Question</label>
+                            <textarea id="user-question" rows="4" placeholder="Enter your question here..."
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"></textarea>
+                        </div>
+
+                        <div>
+                            <label for="image-upload" class="block text-left text-slate-700 font-medium mb-2">Upload an
+                                Image (optional)</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label for="image-upload"
+                                    class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-white rounded-lg cursor-pointer bg-white bg-opacity-50 hover:bg-opacity-70 transition-colors">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-slate-500" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.148a2.5 2.5 0 0 0-2.434 2.74l.006.5A1.5 1.5 0 0 1 2 13h12a1.5 1.5 0 0 1 1.5 1.5v2.5a.5.5 0 0 1-1 0v-2a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 2 13v-2.5a.5.5 0 0 1 1 0v2.5a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-2zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                        </svg>
+                                        <p class="mb-2 text-sm text-slate-500"><span class="font-semibold">Click to
+                                                upload</span> or drag and drop</p>
+                                        <p class="text-xs text-slate-500">SVG, PNG, JPG or GIF</p>
+                                    </div>
+                                    <input id="image-upload" type="file" class="hidden" />
+                                </label>
+                            </div>
+                            <div id="image-preview" class="hidden mt-4">
+                                <img id="preview-image" src="#" alt="Image Preview"
+                                    class="max-w-full h-auto rounded-lg">
+                            </div>
+                        </div>
+
+                        <button id="solve-btn"
+                            class="w-full py-3 px-6 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors duration-300 animate-glow-blue">
+                            Get Solution
+                        </button>
+                    </div>
+                </div>
+
+                <div id="solution-output-container" class="mt-10 hidden">
+                    <div id="loading-spinner-solver" class="hidden mx-auto spinner mb-4"></div>
+                    <div id="solution-output" class="glass-card p-6 md:p-10 text-left">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Staff Directory Section -->
+        <section id="staff" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Our Mentors</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">Meet Our Dedicated Staff</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        Our passionate educators are committed to nurturing the next generation of leaders.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Staff Card 4 (Founder) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Head+of+Academics"
+                            alt="Head of Academics" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Late Smt. Neerja Mishra</h3>
+                        <p class="text-slate-600">Honourable Founder</p>
+                    </div>
+                    <!-- Staff Card 1 (Manager) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Manager" alt="Manager Pradeep Tiwari"
+                            class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Mr. Pradeep Tiwari</h3>
+                        <p class="text-slate-600">Manager</p>
+                    </div>
+                    <!-- Staff Card 2 (Principal) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Principal"
+                            alt="Principal Samaya Acahriya" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Ms. Samaya Acahriya</h3>
+                        <p class="text-slate-600">Principal</p>
+                    </div>
+                    <!-- Staff Card 3 (Vice Principal) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Vice+Principal"
+                            alt="Vice Principal Gitendra" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Mr. Gitendra</h3>
+                        <p class="text-slate-600">Vice Principal</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
         <section id="about" class="py-16 md:py-24 fade-in">
             <div class="container mx-auto px-4">
                 <div class="text-center max-w-2xl mx-auto mb-12">
@@ -452,109 +558,6 @@
             </div>
         </section>
 
-        <section id="problem-solver" class="py-16 md:py-24 fade-in">
-            <div class="container mx-auto px-4 text-center">
-                <span class="text-blue-600 font-semibold uppercase tracking-wide">AI Integration</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-2">AI-Powered Problem Solver</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto mb-10">Ask a question, upload an image of a problem, and get
-                    an instant solution.</p>
-
-                <div class="glass-card p-6 md:p-10 max-w-3xl mx-auto">
-                    <div class="space-y-6">
-                        <div>
-                            <label for="user-question" class="block text-left text-slate-700 font-medium mb-2">Your
-                                Question</label>
-                            <textarea id="user-question" rows="4" placeholder="Enter your question here..."
-                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"></textarea>
-                        </div>
-
-                        <div>
-                            <label for="image-upload" class="block text-left text-slate-700 font-medium mb-2">Upload an
-                                Image (optional)</label>
-                            <div class="flex items-center justify-center w-full">
-                                <label for="image-upload"
-                                    class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-white rounded-lg cursor-pointer bg-white bg-opacity-50 hover:bg-opacity-70 transition-colors">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <svg class="w-8 h-8 mb-4 text-slate-500" aria-hidden="true"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.148a2.5 2.5 0 0 0-2.434 2.74l.006.5A1.5 1.5 0 0 1 2 13h12a1.5 1.5 0 0 1 1.5 1.5v2.5a.5.5 0 0 1-1 0v-2a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 2 13v-2.5a.5.5 0 0 1 1 0v2.5a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-2zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                                        </svg>
-                                        <p class="mb-2 text-sm text-slate-500"><span class="font-semibold">Click to
-                                                upload</span> or drag and drop</p>
-                                        <p class="text-xs text-slate-500">SVG, PNG, JPG or GIF</p>
-                                    </div>
-                                    <input id="image-upload" type="file" class="hidden" />
-                                </label>
-                            </div>
-                            <div id="image-preview" class="hidden mt-4">
-                                <img id="preview-image" src="#" alt="Image Preview"
-                                    class="max-w-full h-auto rounded-lg">
-                            </div>
-                        </div>
-
-                        <button id="solve-btn"
-                            class="w-full py-3 px-6 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors duration-300 animate-glow-blue">
-                            Get Solution
-                        </button>
-                    </div>
-                </div>
-
-                <div id="solution-output-container" class="mt-10 hidden">
-                    <div id="loading-spinner-solver" class="hidden mx-auto spinner mb-4"></div>
-                    <div id="solution-output" class="glass-card p-6 md:p-10 text-left">
-                    </div>
-                </div>
-            </div>
-        </section> <!-- Staff Directory Section -->
-        <section id="staff" class="py-16 md:py-24 fade-in">
-            <div class="container mx-auto px-4">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Our Mentors</span>
-                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">Meet Our Dedicated Staff</h2>
-                    <p class="mt-4 text-lg text-slate-600">
-                        Our passionate educators are committed to nurturing the next generation of leaders.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <!-- Staff Card 4 (Founder) -->
-                    <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Head+of+Academics"
-                            alt="Head of Academics" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Late Smt. Neerja Mishra</h3>
-                        <p class="text-slate-600">Honourable Founder</p>
-                    </div>
-                    <!-- Staff Card 1 (Manager) -->
-                    <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Manager" alt="Manager Pradeep Tiwari"
-                            class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Mr. Pradeep Tiwari</h3>
-                        <p class="text-slate-600">Manager</p>
-                    </div>
-                    <!-- Staff Card 2 (Principal) -->
-                    <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Principal"
-                            alt="Principal Samaya Acahriya" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Ms. Samaya Acahriya</h3>
-                        <p class="text-slate-600">Principal</p>
-                    </div>
-                    <!-- Staff Card 3 (Vice Principal) -->
-                    <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Vice+Principal"
-                            alt="Vice Principal Gitendra" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Mr. Gitendra</h3>
-                        <p class="text-slate-600">Vice Principal</p>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
 
 
         <!-- Contact Section -->
