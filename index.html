@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayodhya Academy - A CBSE School</title>
+
+    <link rel="icon" href="cmecbekoqt4wwk0w08kkgwk0skckoo0.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="text-slate-900 antialiased">
+
+    <header id="main-header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300 glass-card">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300">
+            <a href="#" class="text-2xl font-bold text-blue-600 transition-all duration-300"
+                style="font-family: 'Montserrat' , sans-serif; font-optical-sizing: auto; font-style: normal;">
+                Ayodhya Academy
+            </a>
+            <div class="hidden md:flex space-x-6 text-base font-medium">
+                <a href="#about" class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">About Us</a>
+                <a href="#academics"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Academics</a>
+                <a href="#facilities"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Facilities</a>
+                <a href="#gallery"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Gallery</a>
+                <a href="#news" class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">News &
+                    Events</a>
+                <a href="#staff" class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Staff</a>
+                <a href="#admissions"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Admissions</a>
+                <a href="#contact"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Contact</a>
+            </div>
+            <button id="mobile-menu-button"
+                class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-300 transform active:scale-95">
+                <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2 glass-card">
+            <a href="#about" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">About Us</a>
+            <a href="#academics" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Academics</a>
+            <a href="#facilities" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Facilities</a>
+            <a href="#gallery" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Gallery</a>
+            <a href="#news" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">News & Events</a>
+            <a href="#staff" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Staff</a>
+            <a href="#admissions" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Admissions</a>
+            <a href="#contact" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative h-[60vh] flex items-center justify-center text-center text-white p-4 overflow-hidden"
+            style="background-image: url('https://shubhangverma.com/affiles/assets/hero-bg1.jpg'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-blue-950 bg-opacity-75"></div>
+            <div class="relative z-10 flex items-center justify-center h-full w-full">
+                <div
+                    class="max-w-4xl p-8 rounded-3xl backdrop-blur-md bg-white/20 border border-white/20 shadow-lg text-center text-white">
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-4 hero-title">
+                        Empowering Minds, Shaping Futures
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl font-light mb-8 max-w-prose mx-auto hero-subtitle">
+                        A premier CBSE-affiliated school dedicated to academic excellence from Nursery to Class 12.
+                    </p>
+                    <a href="#admissions"
+                        class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 animate-glow-blue hero-button">
+                        Admissions Open
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="counters-section py-16 bg-gray-50">
+            <div class="container mx-auto text-center">
+                <p class="text-blue-600 font-semibold mb-2">BY THE NUMBERS</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">A Growing Legacy</h2>
+
+                <div class="counters-container grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                    <div class="counter-card">
+                        <h2 class="counter" data-target="1350">0</h2>
+                        <p>Happy Students</p>
+                    </div>
+
+                    <div class="counter-card">
+                        <h2 class="counter" data-target="120">0</h2>
+                        <p>Dedicated Staff</p>
+                    </div>
+
+                    <div class="counter-card">
+                        <h2 class="counter" data-target="27">0</h2>
+                        <p>Classes</p>
+                    </div>
+
+                    <div class="counter-card">
+                        <h2 class="counter" data-target="20">0</h2>
+                        <p>Years of Excellence</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="calendar" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Stay Organized</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">Academic Calendar</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        Here you can find all the important dates for the academic year, including holidays, exams, and
+                        events.
+                    </p>
+
+                    <div class="mt-8 rounded-lg p-4 sm:p-8 shadow-inner glass-card">
+                        <div class="flex justify-between items-center mb-6">
+                            <button id="prev-month"
+                                class="p-2 rounded-full bg-blue-200 text-blue-800 hover:bg-blue-300 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <h3 id="current-month-year" class="text-2xl font-bold text-blue-800"></h3>
+                            <button id="next-month"
+                                class="p-2 rounded-full bg-blue-200 text-blue-800 hover:bg-blue-300 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-7 gap-2 text-sm sm:text-base font-semibold text-slate-500">
+                            <div class="py-2">Sun</div>
+                            <div class="py-2">Mon</div>
+                            <div class="py-2">Tue</div>
+                            <div class="py-2">Wed</div>
+                            <div class="py-2">Thu</div>
+                            <div class="py-2">Fri</div>
+                            <div class="py-2">Sat</div>
+                        </div>
+
+                        <div id="calendar-grid" class="grid grid-cols-7 gap-2 mt-4 text-center">
+                        </div>
+
+                        <div class="mt-8 text-left max-w-lg mx-auto">
+                            <h4 class="text-lg font-bold mb-2">Event Legend</h4>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm sm:text-base">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-4 h-4 rounded-full bg-red-400"></div>
+                                    <span>Holiday</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-4 h-4 rounded-full bg-yellow-400"></div>
+                                    <span>Exam</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-4 h-4 rounded-full bg-blue-400"></div>
+                                    <span>Function</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-4 h-4 rounded-full bg-purple-400"></div>
+                                    <span>PTM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Our Mission</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">A Foundation for Success</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        At Ayodhya Academy, we believe in a holistic approach to education. Our mission is to foster
+                        curiosity,
+                        creativity, and critical thinking in every student, preparing them for a bright future.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="rounded-lg shadow-lg p-6 text-center transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <h3 class="text-xl font-bold mb-2">Academic Excellence</h3>
+                        <p class="text-slate-600">
+                            We are committed to providing a rigorous academic curriculum that challenges students to
+                            reach their full potential.
+                        </p>
+                    </div>
+                    <div
+                        class="rounded-lg shadow-lg p-6 text-center transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <h3 class="text-xl font-bold mb-2">Community & Spirit</h3>
+                        <p class="text-slate-600">
+                            Our school is a vibrant community where students, teachers, and parents work together to
+                            create a supportive environment.
+                        </p>
+                    </div>
+                    <div
+                        class="rounded-lg shadow-lg p-6 text-center transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <h3 class="text-xl font-bold mb-2">Personal Growth</h3>
+                        <p class="text-slate-600">
+                            Beyond academics, we focus on developing character, leadership skills, and a lifelong love
+                            of learning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="academics" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Our Curriculum</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">CBSE-Affiliated Education</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        As a CBSE-affiliated school, we follow a comprehensive curriculum from Nursery to Class 12,
+                        fostering intellectual, emotional, and physical growth.
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="rounded-lg shadow-lg overflow-hidden glass-card">
+                        <img src="https://placehold.co/600x400/2563eb/eff6ff?text=Primary+School"
+                            alt="Primary School Students"
+                            class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Primary (Nursery - 5)</h3>
+                            <p class="text-slate-600">
+                                A nurturing environment that focuses on foundational skills, play-based learning, and
+                                curiosity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden glass-card">
+                        <img src="https://placehold.co/600x400/3b82f6/eff6ff?text=Middle+School"
+                            alt="Middle School Students"
+                            class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Middle (6 - 8)</h3>
+                            <p class="text-slate-600">
+                                Our curriculum deepens critical thinking and subject knowledge, preparing students for
+                                senior grades.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden glass-card">
+                        <img src="https://placehold.co/600x400/60a5fa/eff6ff?text=Senior+School"
+                            alt="Senior School Students"
+                            class="w-full h-48 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Senior (9 - 12)</h3>
+                            <p class="text-slate-600">
+                                We offer diverse streams and personalized guidance to help students excel in their board
+                                examinations and future careers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Our Campus</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">World-Class Facilities</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        Explore our modern campus designed to provide the best learning environment.
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="rounded-lg shadow-lg overflow-hidden glass-card">
+                        <img src="https://placehold.co/600x400/1d4ed8/eff6ff?text=Science+Lab" alt="Science Lab"
+                            class="w-full h-32 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-bold">Science Labs</h3>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden glass-card">
+                        <img src="https://placehold.co/600x400/2563eb/eff6ff?text=Computer+Lab" alt="Computer Lab"
+                            class="w-full h-32 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-bold">Computer Labs</h3>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden glass-card">
+                        <img src="https://placehold.co/600x400/3b82f6/eff6ff?text=Library" alt="School Library"
+                            class="w-full h-32 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-bold">Library</h3>
+                        </div>
+                    </div>
+                    <div class="rounded-lg shadow-lg overflow-hidden glass-card">
+                        <img src="https://placehold.co/600x400/60a5fa/eff6ff?text=Sports+Ground" alt="Sports Ground"
+                            class="w-full h-32 object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="p-4 text-center">
+                            <h3 class="text-lg font-bold">Sports Ground</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Moments in Time</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">School Gallery</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        A glimpse into the vibrant life and activities at our school.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group glass-card">
+                        <div class="gallery-image-wrapper">
+                            <img src="https://placehold.co/600x400/93c5fd/1e3a8a?text=Sports+Day"
+                                alt="Students playing sports"
+                                class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-bold">Sports Day</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group glass-card">
+                        <div class="gallery-image-wrapper">
+                            <img src="https://placehold.co/600x400/60a5fa/1e3a8a?text=Annual+Fest"
+                                alt="Students performing on stage"
+                                class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-bold">Annual Fest</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group glass-card">
+                        <div class="gallery-image-wrapper">
+                            <img src="https://placehold.co/600x400/3b82f6/eff6ff?text=Science+Fair"
+                                alt="Students with science project"
+                                class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-bold">Science Fair</p>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group glass-card">
+                        <div class="gallery-image-wrapper">
+                            <img src="https://placehold.co/600x400/2563eb/eff6ff?text=Library+Time"
+                                alt="Students reading in library"
+                                class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p class="text-white text-lg font-bold">Library Time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Latest Happenings</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">News & Events</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        Stay up-to-date with all the latest announcements and happenings at our school.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div
+                        class="rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 glass-card">
+                        <div class="flex-shrink-0 text-center">
+                            <p class="text-4xl font-bold text-blue-600">25</p>
+                            <p class="text-sm uppercase text-slate-500">Aug</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Annual Science Fair a Huge Success</h3>
+                            <p class="text-slate-600">
+                                Our students showcased incredible projects at this year's science fair. Congratulations
+                                to all the participants!
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 glass-card">
+                        <div class="flex-shrink-0 text-center">
+                            <p class="text-4xl font-bold text-blue-600">18</p>
+                            <p class="text-sm uppercase text-slate-500">Aug</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">New Library Wing Now Open</h3>
+                            <p class="text-slate-600">
+                                We are excited to announce the grand opening of our new library wing, featuring a modern
+                                study space.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 glass-card">
+                        <div class="flex-shrink-0 text-center">
+                            <p class="text-4xl font-bold text-blue-600">10</p>
+                            <p class="text-sm uppercase text-slate-500">Aug</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Upcoming Annual Function</h3>
+                            <p class="text-slate-600">
+                                Mark your calendars! Our annual school function is scheduled for October 10th. More
+                                details to follow.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="rounded-lg shadow-lg p-6 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 glass-card">
+                        <div class="flex-shrink-0 text-center">
+                            <p class="text-4xl font-bold text-blue-600">01</p>
+                            <p class="text-sm uppercase text-slate-500">Aug</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Parent-Teacher Meeting</h3>
+                            <p class="text-slate-600">
+                                A reminder that the PTM for all classes will be held on August 30th.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problem-solver" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-2">AI-Powered Problem Solver</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto mb-10">Ask a question, upload an image of a problem, and get
+                    an instant solution.</p>
+
+                <div class="glass-card p-6 md:p-10 max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <div>
+                            <label for="user-question" class="block text-left text-slate-700 font-medium mb-2">Your
+                                Question</label>
+                            <textarea id="user-question" rows="4" placeholder="Enter your question here..."
+                                class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-50 border border-white focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all"></textarea>
+                        </div>
+
+                        <div>
+                            <label for="image-upload" class="block text-left text-slate-700 font-medium mb-2">Upload an
+                                Image (optional)</label>
+                            <div class="flex items-center justify-center w-full">
+                                <label for="image-upload"
+                                    class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-white rounded-lg cursor-pointer bg-white bg-opacity-50 hover:bg-opacity-70 transition-colors">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-slate-500" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.148a2.5 2.5 0 0 0-2.434 2.74l.006.5A1.5 1.5 0 0 1 2 13h12a1.5 1.5 0 0 1 1.5 1.5v2.5a.5.5 0 0 1-1 0v-2a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 2 13v-2.5a.5.5 0 0 1 1 0v2.5a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-2zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                        </svg>
+                                        <p class="mb-2 text-sm text-slate-500"><span class="font-semibold">Click to
+                                                upload</span> or drag and drop</p>
+                                        <p class="text-xs text-slate-500">SVG, PNG, JPG or GIF</p>
+                                    </div>
+                                    <input id="image-upload" type="file" class="hidden" />
+                                </label>
+                            </div>
+                            <div id="image-preview" class="hidden mt-4">
+                                <img id="preview-image" src="#" alt="Image Preview"
+                                    class="max-w-full h-auto rounded-lg">
+                            </div>
+                        </div>
+
+                        <button id="solve-btn"
+                            class="w-full py-3 px-6 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-colors duration-300 animate-glow-blue">
+                            Get Solution
+                        </button>
+                    </div>
+                </div>
+
+                <div id="solution-output-container" class="mt-10 hidden">
+                    <div id="loading-spinner-solver" class="hidden mx-auto spinner mb-4"></div>
+                    <div id="solution-output" class="glass-card p-6 md:p-10 text-left">
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Staff Directory Section -->
+        <section id="staff" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Our Mentors</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">Meet Our Dedicated Staff</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        Our passionate educators are committed to nurturing the next generation of leaders.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Staff Card 4 (Founder) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Head+of+Academics"
+                            alt="Head of Academics" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Late Smt. Neerja Mishra</h3>
+                        <p class="text-slate-600">Honourable Founder</p>
+                    </div>
+                    <!-- Staff Card 1 (Manager) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Manager" alt="Manager Pradeep Tiwari"
+                            class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Mr. Pradeep Tiwari</h3>
+                        <p class="text-slate-600">Manager</p>
+                    </div>
+                    <!-- Staff Card 2 (Principal) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Principal"
+                            alt="Principal Samaya Acahriya" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Ms. Samaya Acahriya</h3>
+                        <p class="text-slate-600">Principal</p>
+                    </div>
+                    <!-- Staff Card 3 (Vice Principal) -->
+                    <div
+                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
+                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Vice+Principal"
+                            alt="Vice Principal Gitendra" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
+                        <h3 class="text-xl font-bold">Mr. Gitendra</h3>
+                        <p class="text-slate-600">Vice Principal</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wide">Get in Touch</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold">Contact Us</h2>
+                    <p class="mt-4 text-lg text-slate-600">
+                        We'd love to hear from you! Reach out to us for more information.
+                    </p>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="md:w-1/2 p-6 rounded-lg shadow-lg glass-card">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">Our Location</h3>
+                        <p class="text-slate-600 mb-2">Ayodhya Academy, Ayodhya, Uttar Pradesh, India</p>
+                        <p class="text-slate-600 mb-2">
+                            <span class="font-bold">Phone:</span>
+                            <a href="tel:+919415155790" class="text-blue-600 hover:underline">+91 9415155790</a>,
+                            <a href="tel:+919452305777" class="text-blue-600 hover:underline">+91 9452305777</a>,
+                            <a href="tel:+918090239773" class="text-blue-600 hover:underline">+91 8090239773</a>
+                        </p>
+                        <p class="text-slate-600">
+                            <span class="font-bold">Email:</span>
+                            <a href="mailto:ayodhyaacademy@gmail.com"
+                                class="text-blue-600 hover:underline">ayodhyaacademy@gmail.com</a>
+                        </p>
+                        <div class="mt-6 h-64 w-full rounded-md overflow-hidden shadow-md">
+                            <!-- Embedded Google Map -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4299.1921125895915!2d82.19066697602722!3d26.782955865653776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a07e7ffc682e3%3A0x878d41ec767e16b8!2sAyodhya%20Academy!5e1!3m2!1sen!2sin!4v1756104356366!5m2!1sen!2sin"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="text-xl font-bold mb-4">Ayodhya Academy</h4>
+                <p class="text-sm text-gray-400">
+                    Empowering minds, shaping futures. A premier CBSE-affiliated school in Ayodhya.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#about" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                    <li><a href="#academics" class="hover:text-blue-400 transition-colors">Academics</a></li>
+                    <li><a href="#facilities" class="hover:text-blue-400 transition-colors">Facilities</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Contact Info</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><i class="fas fa-map-marker-alt mr-2"></i> 123 School Lane, Ayodhya, UP 224001</li>
+                    <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@ayodhyaacademy.edu"
+                            class="hover:text-blue-400 transition-colors">info@ayodhyaacademy.edu</a></li>
+                    <li><i class="fas fa-phone-alt mr-2"></i> +91 1234 567 890</li>
+                </ul>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Newsletter</h4>
+                <p class="text-sm text-gray-400">
+                    Stay up-to-date with our latest news and events.
+                </p>
+                <form class="mt-4">
+                    <input type="email" placeholder="Your email address"
+                        class="w-full p-2 rounded-md border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit"
+                        class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-md transition-colors">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="mt-8 text-center text-sm text-gray-500 border-t border-gray-700 pt-8">
+            &copy; 2024 Ayodhya Academy. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,201 +1,394 @@
-// This file is referenced in the HTML as `js/main.js`
-
+// Ensure the DOM is fully loaded before executing the script.
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Mobile Menu Toggle ---
+    // ------------------------------------------------------------------
+    // Mobile Menu Functionality
+    // ------------------------------------------------------------------
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuLinks = mobileMenu.querySelectorAll('a');
 
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Close mobile menu when a link is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    menuLinks.forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
     });
 
-    // --- Dynamic Content & Animations ---
-    
-    // Intersection Observer for fade-in effect on sections
-    const fadeInElements = document.querySelectorAll('.fade-in');
+    // ------------------------------------------------------------------
+    // Scroll-based Header and Back-to-Top Button
+    // ------------------------------------------------------------------
+    const mainHeader = document.getElementById('main-header');
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            mainHeader.classList.add('header-scrolled');
+        } else {
+            mainHeader.classList.remove('header-scrolled');
+        }
+
+        if (backToTopBtn) {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        }
+    });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // ------------------------------------------------------------------
+    // Fade-in Effect on Scroll (Intersection Observer)
+    // ------------------------------------------------------------------
+    const sections = document.querySelectorAll('.fade-in');
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.2 // Trigger when 20% of the element is visible
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once it's visible
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    fadeInElements.forEach(el => {
-        observer.observe(el);
+    sections.forEach(section => {
+        observer.observe(section);
     });
 
-    // --- Academic Calendar Functionality ---
-
+    // ------------------------------------------------------------------
+    // Academic Calendar Functionality
+    // ------------------------------------------------------------------
     const calendarGrid = document.getElementById('calendar-grid');
-    const currentMonthYear = document.getElementById('current-month-year');
+    const currentMonthYearEl = document.getElementById('current-month-year');
     const prevMonthBtn = document.getElementById('prev-month');
     const nextMonthBtn = document.getElementById('next-month');
 
     let currentDate = new Date();
 
     const events = {
-        // Example events (can be fetched from an API)
-        '2025-08-15': { name: 'Independence Day', type: 'holiday' },
-        '2025-09-05': { name: 'Teacher\'s Day Celebration', type: 'function' },
-        '2025-09-20': { name: 'Mid-term Exams Begin', type: 'exam' },
-        '2025-10-02': { name: 'Gandhi Jayanti', type: 'holiday' },
-        '2025-10-10': { name: 'Annual School Function', type: 'function' },
-        '2025-10-25': { name: 'PTM', type: 'ptm' }
+        '2025-01-14': { title: 'Hazrat Ali Jayanti / Makar Sankranti', type: 'holiday' },
+        '2025-01-26': { title: 'Republic Day', type: 'holiday' },
+        '2025-02-26': { title: 'Maha Shivaratri', type: 'holiday' },
+        '2025-03-13': { title: 'Holi (Holiday)', type: 'holiday' },
+        '2025-03-14': { title: 'Holi (Dhuleti)', type: 'holiday' },
+        '2025-03-31': { title: 'Eid-ul-Fitr', type: 'holiday' },
+        '2025-04-06': { title: 'Ram Navami', type: 'holiday' },
+        '2025-04-10': { title: 'Mahavir Jayanti', type: 'holiday' },
+        '2025-04-14': { title: 'Dr. B. R. Ambedkar Jayanti', type: 'holiday' },
+        '2025-04-18': { title: 'Good Friday', type: 'holiday' },
+        '2025-05-12': { title: 'Buddha Purnima', type: 'holiday' },
+        '2025-06-07': { title: 'Eid-ul-Zuha (Bakrid)', type: 'holiday' },
+        '2025-07-06': { title: 'Muharram', type: 'holiday' },
+        '2025-08-09': { title: 'Raksha Bandhan', type: 'holiday' },
+        '2025-08-14': { title: 'School Break', type: 'holiday' },
+        '2025-08-15': { title: 'Independence Day', type: 'holiday' },
+        '2025-08-16': { title: 'Janmashtami', type: 'holiday' },
+        '2025-08-17': { title: 'School Break', type: 'holiday' },
+        '2025-09-05': { title: 'Eid-e-Milad', type: 'holiday' },
+        '2025-10-01': { title: 'Maha Navami', type: 'holiday' },
+        '2025-10-02': { title: 'Gandhi Jayanti / Dussehra', type: 'holiday' },
+        '2025-10-20': { title: 'Diwali', type: 'holiday' },
+        '2025-10-22': { title: 'Govardhan Puja', type: 'holiday' },
+        '2025-10-23': { title: 'Bhai Dooj', type: 'holiday' },
+        '2025-11-05': { title: 'Gurunanak Jayanti', type: 'holiday' },
+        '2025-12-25': { title: 'Christmas', type: 'holiday' },
+        '2025-07-07': { title: 'Periodic Test 1', type: 'exam' },
+        '2025-07-08': { title: 'Periodic Test 1', type: 'exam' },
+        '2025-07-09': { title: 'Periodic Test 1', type: 'exam' },
+        '2025-07-10': { title: 'Periodic Test 1', type: 'exam' },
+        '2025-07-11': { title: 'Periodic Test 1', type: 'exam' },
+        '2025-07-12': { title: 'Periodic Test 1', type: 'exam' },
+        '2025-09-08': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-09': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-10': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-11': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-12': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-13': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-15': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-16': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-17': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-18': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-19': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-09-20': { title: 'Half-Yearly Exam', type: 'exam' },
+        '2025-12-01': { title: 'Periodic Test 2', type: 'exam' },
+        '2025-12-02': { title: 'Periodic Test 2', type: 'exam' },
+        '2025-12-03': { title: 'Periodic Test 2', type: 'exam' },
+        '2025-12-04': { title: 'Periodic Test 2', type: 'exam' },
+        '2025-12-05': { title: 'Periodic Test 2', type: 'exam' },
+        '2025-12-06': { title: 'Periodic Test 2', type: 'exam' },
+        '2026-02-16': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-17': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-18': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-19': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-20': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-21': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-23': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-24': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-25': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-26': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-27': { title: 'Annual Examination', type: 'exam' },
+        '2026-02-28': { title: 'Annual Examination', type: 'exam' },
+        '2025-04-07': { title: 'New Academic Session Begins', type: 'holiday' },
+        '2025-05-31': { title: 'Summer Vacation Starts', type: 'holiday' },
+        '2025-06-01': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-02': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-03': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-04': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-05': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-06': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-07': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-08': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-09': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-10': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-11': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-12': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-13': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-14': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-15': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-16': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-17': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-18': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-19': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-20': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-21': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-22': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-23': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-24': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-25': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-26': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-27': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-28': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-29': { title: 'Summer Vacation', type: 'holiday' },
+        '2025-06-30': { title: 'Summer Vacation Ends', type: 'holiday' },
+        '2026-01-01': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-02': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-03': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-04': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-05': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-06': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-07': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-08': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-09': { title: 'Winter Vacation', type: 'holiday' },
+        '2026-01-10': { title: 'Winter Vacation Ends', type: 'holiday' },
     };
 
-    function generateCalendar() {
-        calendarGrid.innerHTML = '';
+    function renderCalendar() {
         const year = currentDate.getFullYear();
         const month = currentDate.getMonth();
 
-        currentMonthYear.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+        currentMonthYearEl.textContent = new Date(year, month).toLocaleString('en-IN', { month: 'long', year: 'numeric' });
+        calendarGrid.innerHTML = '';
 
-        const firstDay = new Date(year, month, 1);
-        const lastDay = new Date(year, month + 1, 0);
-        const numDays = lastDay.getDate();
-        const startDayIndex = firstDay.getDay(); // 0 for Sunday, 1 for Monday, etc.
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // Fill in leading empty days
-        for (let i = 0; i < startDayIndex; i++) {
+        for (let i = 0; i < firstDayOfMonth; i++) {
             const emptyDay = document.createElement('div');
-            emptyDay.className = 'py-2';
             calendarGrid.appendChild(emptyDay);
         }
 
-        // Fill in the days of the month
-        for (let day = 1; day <= numDays; day++) {
+        for (let day = 1; day <= daysInMonth; day++) {
             const dayEl = document.createElement('div');
-            dayEl.className = 'py-2 px-1 text-center font-semibold rounded-lg relative tooltip-container';
+            dayEl.classList.add('p-2', 'rounded-lg', 'font-medium', 'text-slate-700', 'transition-colors', 'cursor-pointer', 'hover:bg-blue-200', 'tooltip-container', 'relative');
             dayEl.textContent = day;
 
             const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             const event = events[dateString];
 
             if (event) {
-                dayEl.classList.add(`event-${event.type}`, 'text-blue-900', 'cursor-pointer', 'hover:scale-105', 'transition-transform');
-
+                dayEl.classList.add('text-white', 'font-bold', `event-${event.type}`, 'shadow-md');
                 const tooltip = document.createElement('span');
-                tooltip.className = 'tooltip-text';
-                tooltip.textContent = event.name;
+                tooltip.classList.add('tooltip-text');
+                tooltip.textContent = event.title;
                 dayEl.appendChild(tooltip);
-            } else {
-                dayEl.classList.add('text-slate-700');
             }
-
             calendarGrid.appendChild(dayEl);
         }
     }
 
     prevMonthBtn.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
-        generateCalendar();
+        renderCalendar();
     });
 
     nextMonthBtn.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() + 1);
-        generateCalendar();
+        renderCalendar();
     });
 
-    // Initial calendar generation
-    generateCalendar();
+    renderCalendar();
 
-    // --- LLM Feature: Event Idea Generator ---
+    // ------------------------------------------------------------------
+    // Count-up Animation
+    // ------------------------------------------------------------------
+    const counters = document.querySelectorAll('.counter');
 
-    const generateBtn = document.getElementById('generate-btn');
-    const eventPrompt = document.getElementById('event-prompt');
-    const eventOutput = document.getElementById('event-output');
-    const loadingSpinner = document.getElementById('loading-spinner');
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / 200;
 
-    generateBtn.addEventListener('click', async () => {
-        const promptText = eventPrompt.value.trim();
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 15);
+            } else {
+                counter.innerText = target + "+";
+            }
+        }
 
-        if (promptText === '') {
-            eventOutput.innerHTML = '<p class="text-center text-red-500 italic">Please enter a description for the event.</p>';
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateCount();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(counter);
+    });
+
+    // ------------------------------------------------------------------
+    // AI PROBLEM SOLVING (Combined and Fixed)
+    // ------------------------------------------------------------------
+    const solveBtn = document.getElementById('solve-btn');
+    const userQuestion = document.getElementById('user-question');
+    const imageUpload = document.getElementById('image-upload');
+    const solutionOutputContainer = document.getElementById('solution-output-container');
+    const solutionOutput = document.getElementById('solution-output');
+    const loadingSpinner = document.getElementById('loading-spinner-solver');
+    const imagePreview = document.getElementById('image-preview');
+    const previewImage = document.getElementById('preview-image');
+
+    // Image preview functionality
+    imageUpload.addEventListener('change', () => {
+        const file = imageUpload.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImage.src = e.target.result;
+                imagePreview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.classList.add('hidden');
+        }
+    });
+
+    solveBtn.addEventListener('click', async () => {
+        const textPrompt = userQuestion.value.trim();
+        const imageFile = imageUpload.files[0];
+
+        if (!textPrompt && !imageFile) {
+            solutionOutputContainer.classList.remove('hidden');
+            solutionOutput.innerHTML = '<p class="text-center text-red-500">Please enter a question or upload an image.</p>';
             return;
         }
 
-        // Show loading spinner and clear previous output
+        // Show loading state
+        solveBtn.disabled = true;
+        solutionOutputContainer.classList.remove('hidden');
         loadingSpinner.classList.remove('hidden');
-        loadingSpinner.classList.add('flex');
-        eventOutput.innerHTML = '';
+        solutionOutput.innerHTML = '';
 
-        // Simulate API call to a Gemini-powered backend
-        const simulatedResponse = await simulateGeminiResponse(promptText);
+        let chatHistory = [];
+        let parts = [];
 
-        // Hide spinner and display the result
-        loadingSpinner.classList.add('hidden');
-        loadingSpinner.classList.remove('flex');
-        eventOutput.innerHTML = simulatedResponse;
-    });
-
-    async function simulateGeminiResponse(prompt) {
-        // This is a placeholder function. In a real-world scenario, you would
-        // make an API call to a backend server that interacts with the Gemini API.
-        
-        // Simulating a delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        // Generate a simple, pre-determined response based on a keyword
-        const lowerPrompt = prompt.toLowerCase();
-        let generatedContent = '';
-
-        if (lowerPrompt.includes('sports')) {
-            generatedContent = `
-                <h4>Theme: "Olympus Games"</h4>
-                <p>A fun and competitive theme inspired by the ancient Greek Olympics. Students can represent different "city-states" or houses.</p>
-                <h5>Event Schedule:</h5>
-                <ul>
-                    <li><strong>8:00 AM - 9:00 AM:</strong> Opening Ceremony & Torch Relay</li>
-                    <li><strong>9:00 AM - 12:00 PM:</strong> Track & Field Events (100m, relay, long jump)</li>
-                    <li><strong>12:00 PM - 1:00 PM:</strong> Lunch Break</li>
-                    <li><strong>1:00 PM - 3:00 PM:</strong> Team Sports (Football, Basketball, Tug-of-War)</li>
-                    <li><strong>3:00 PM - 4:00 PM:</strong> Award Ceremony & Closing</li>
-                </ul>
-            `;
-        } else if (lowerPrompt.includes('science')) {
-            generatedContent = `
-                <h4>Theme: "Future Innovators Expo"</h4>
-                <p>An engaging theme that encourages students to think about future technologies and scientific breakthroughs. The fair could be structured around different "zones" like Renewable Energy, Robotics, and Biotechnology.</p>
-                <h5>Event Schedule:</h5>
-                <ul>
-                    <li><strong>9:00 AM - 10:00 AM:</strong> Project Setup & Judging begins</li>
-                    <li><strong>10:00 AM - 1:00 PM:</strong> Public Viewing & Student Demonstrations</li>
-                    <li><strong>1:00 PM - 2:00 PM:</strong> Interactive Science Workshop</li>
-                    <li><strong>2:00 PM - 3:00 PM:</strong> Guest Speaker Presentation on "AI & the Future"</li>
-                    <li><strong>3:00 PM - 4:00 PM:</strong> Award Ceremony & Recognition</li>
-                </ul>
-            `;
-        } else {
-            generatedContent = `
-                <h4>Theme: "Unity in Diversity"</h4>
-                <p>A beautiful theme that celebrates the cultural richness and varied talents of our students. The event could feature performances from different traditions, food stalls, and art displays.</p>
-                <h5>Event Schedule:</h5>
-                <ul>
-                    <li><strong>10:00 AM - 11:00 AM:</strong> Welcome & Opening Performance</li>
-                    <li><strong>11:00 AM - 1:00 PM:</strong> Cultural Dance & Music Showcases</li>
-                    <li><strong>1:00 PM - 2:00 PM:</strong> Food Festival featuring diverse cuisines</li>
-                    <li><strong>2:00 PM - 3:30 PM:</strong> Talent Show & Student Skits</li>
-                    <li><strong>3:30 PM - 4:00 PM:</strong> Closing Remarks & Student Awards</li>
-                </ul>
-            `;
+        // Add text part to the payload
+        if (textPrompt) {
+            parts.push({ text: textPrompt });
         }
 
-        return generatedContent;
-    }
+        // Convert image to base64 if available
+        if (imageFile) {
+            const base64Image = await toBase64(imageFile);
+            parts.push({
+                inline_data: {
+                    mime_type: imageFile.type,
+                    data: base64Image
+                }
+            });
+        }
+        
+        chatHistory.push({ role: "user", parts: parts });
+
+        const payload = { contents: chatHistory };
+        // !! IMPORTANT: REPLACE with your actual Gemini API Key !!
+        const apiKey = "AIzaSyB-UPmBpYoE0Eg2SKzxcX8PZnCTXxGgO9c"; // This is a placeholder.
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        // Utility function to convert file to Base64
+        function toBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = error => reject(error);
+            });
+        }
+
+        let retries = 0;
+        const maxRetries = 5;
+        const baseDelay = 1000;
+
+        async function fetchWithExponentialBackoff() {
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    if (response.status === 429 && retries < maxRetries) {
+                        const delay = baseDelay * Math.pow(2, retries);
+                        retries++;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return fetchWithExponentialBackoff();
+                    } else {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+                }
+
+                const result = await response.json();
+                return result;
+            } catch (error) {
+                console.error('Fetch error:', error);
+                return null;
+            }
+        }
+
+        const result = await fetchWithExponentialBackoff();
+
+        // Hide loading state
+        solveBtn.disabled = false;
+        loadingSpinner.classList.add('hidden');
+
+        if (result && result.candidates && result.candidates.length > 0 &&
+            result.candidates[0].content && result.candidates[0].content.parts &&
+            result.candidates[0].content.parts.length > 0) {
+            const text = result.candidates[0].content.parts[0].text;
+            solutionOutput.innerHTML = `<h3>Solution:</h3><p>${text.replace(/\n/g, '<br>')}</p>`;
+        } else {
+            solutionOutput.innerHTML = '<p class="text-center text-red-500">Sorry, something went wrong. Please try again.</p>';
+        }
+    });
 });
