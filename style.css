@@ -1,6 +1,59 @@
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #e0e0e0;
+    --accent-color: #64b5f6;
+    --bg-color: #121212;
+}
+
+@keyframes glowing-accent {
+    0% {
+        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #64b5f6, 0 0 20px #64b5f6;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
+    }
+}
+
+.text-glow {
+    text-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 25px #0ff, 0 0 30px #0ff, 0 0 35px #0ff, 0 0 40px #0ff;
+    animation: glowing-accent 2s ease-in-out infinite;
+}
+
+/* Your existing CSS for animations and other things can stay here, but replace the root and glowing-blue keyframes with this: */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #e0e0e0;
+    --accent-color: #64b5f6;
+    --bg-color: #121212;
+}
+
+@keyframes glowing-accent {
+    0% {
+        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #64b5f6, 0 0 20px #64b5f6;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
+    }
+}
+
+.staff-card:hover .hidden-details {
+    max-height: 500px;
+    /* A value large enough to fit all content */
+}
+
 /* ================================
-   General Styles
-================================= */
+    General Styles
+    ================================= */
 body {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
@@ -10,7 +63,12 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Oswald', sans-serif;
 }
 
@@ -18,96 +76,167 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: #eef2ff;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #93c5fd;
     border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #60a5fa;
 }
 
 /* ================================
-   Keyframe Animations
-================================= */
+    Keyframe Animations
+    ================================= */
 /* Button Glow */
 @keyframes glowing-blue {
-    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 10px rgba(59, 130, 246, 0.7); }
-    100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+    0% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 10px rgba(59, 130, 246, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
 }
-.animate-glow-blue { animation: glowing-blue 2s infinite; }
+
+.animate-glow-blue {
+    animation: glowing-blue 2s infinite;
+}
 
 /* Hero Fade In */
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.hero-title { animation: fadeInDown 1s ease-out forwards; }
-.hero-subtitle { animation: fadeInUp 1s ease-out 0.5s forwards; opacity: 0; }
-.hero-button { animation: fadeInUp 1s ease-out 1s forwards; opacity: 0; }
-.hero-title { font-size: clamp(1.5rem, 5vw, 3rem); }
-.hero-subtitle { font-size: clamp(1rem, 3vw, 1.5rem); }
+
+.hero-title {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+.hero-button {
+    animation: fadeInUp 1s ease-out 1s forwards;
+    opacity: 0;
+}
+
+.hero-title {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
 
 /* ================================
-   Header Scroll Effects
-================================= */
+    Header Scroll Effects
+    ================================= */
 .header-scrolled {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
-.header-scrolled a { font-size: 0.875rem; }
-.header-scrolled .text-2xl { font-size: 1.5rem; }
+
+.header-scrolled a {
+    font-size: 0.875rem;
+}
+
+.header-scrolled .text-2xl {
+    font-size: 1.5rem;
+}
 
 /* ================================
-   Fade In Sections
-================================= */
+    Fade In Sections
+    ================================= */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94),
-                transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.fade-in.is-visible { opacity: 1; transform: translateY(0); }
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 /* ================================
-   Glass Cards
-================================= */
+    Glass Cards
+    ================================= */
 .glass-card {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 1.5rem;
-    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     transition: all 0.3s ease-in-out;
     max-width: 100%;
     margin: 0.5rem;
 }
+
 .glass-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(31,38,135,0.4);
+    box-shadow: 0 12px 24px rgba(31, 38, 135, 0.4);
 }
 
 /* ================================
-   Calendar Events
-================================= */
-.event-holiday { background-color: rgba(252, 165, 165, 0.6); }
-.event-exam { background-color: rgba(252, 211, 77, 0.6); }
-.event-function { background-color: rgba(147, 197, 253, 0.6); }
-.event-ptm { background-color: rgba(167, 139, 250, 0.6); }
+    Calendar Events
+    ================================= */
+.event-holiday {
+    background-color: rgba(252, 165, 165, 0.6);
+}
+
+.event-exam {
+    background-color: rgba(252, 211, 77, 0.6);
+}
+
+.event-function {
+    background-color: rgba(147, 197, 253, 0.6);
+}
+
+.event-ptm {
+    background-color: rgba(167, 139, 250, 0.6);
+}
 
 /* Tooltip */
-.tooltip-container { position: relative; }
+.tooltip-container {
+    position: relative;
+}
+
 .tooltip-text {
     visibility: hidden;
     background-color: #1f2937;
@@ -124,7 +253,12 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.3s;
     white-space: nowrap;
 }
-.tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
 .tooltip-text::after {
     content: "";
     position: absolute;
@@ -137,29 +271,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================
-   Spinner
-================================= */
+    Spinner
+    ================================= */
 .spinner {
-    border: 4px solid rgba(0,0,0,0.1);
+    border: 4px solid rgba(0, 0, 0, 0.1);
     border-left-color: #3b82f6;
     border-radius: 50%;
     width: 24px;
     height: 24px;
     animation: spin 1s linear infinite;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
 
-/* ================================
-   Gallery Hover Zoom
-================================= */
-.gallery-image-wrapper {
-    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
-.gallery-image-wrapper:hover { transform: scale(1.1); }
 
 /* ================================
-   Back-to-Top Button
-================================= */
+    Gallery Hover Zoom
+    ================================= */
+.gallery-image-wrapper {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-image-wrapper:hover {
+    transform: scale(1.1);
+}
+
+/* ================================
+    Back-to-Top Button
+    ================================= */
 #back-to-top {
     position: fixed;
     bottom: 2rem;
@@ -170,6 +312,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.5s, visibility 0.5s, transform 0.3s ease-out;
     transform: translateY(20px);
 }
+
 #back-to-top.show {
     opacity: 1;
     visibility: visible;
@@ -177,8 +320,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================
-   Calendar Grid Responsive
-================================= */
+    Calendar Grid Responsive
+    ================================= */
 #calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -186,15 +329,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================
-   Counter Section
-================================= */
+    Counter Section
+    ================================= */
 .counters-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
 
-@media(min-width: 768px){
+@media(min-width: 768px) {
     .counters-container {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -205,7 +348,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.2); 
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);

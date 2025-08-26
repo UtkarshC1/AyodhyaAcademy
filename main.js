@@ -83,117 +83,432 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentDate = new Date();
 
     const events = {
-        '2025-01-14': { title: 'Hazrat Ali Jayanti / Makar Sankranti', type: 'holiday' },
-        '2025-01-26': { title: 'Republic Day', type: 'holiday' },
-        '2025-02-26': { title: 'Maha Shivaratri', type: 'holiday' },
-        '2025-03-13': { title: 'Holi (Holiday)', type: 'holiday' },
-        '2025-03-14': { title: 'Holi (Dhuleti)', type: 'holiday' },
-        '2025-03-31': { title: 'Eid-ul-Fitr', type: 'holiday' },
-        '2025-04-06': { title: 'Ram Navami', type: 'holiday' },
-        '2025-04-10': { title: 'Mahavir Jayanti', type: 'holiday' },
-        '2025-04-14': { title: 'Dr. B. R. Ambedkar Jayanti', type: 'holiday' },
-        '2025-04-18': { title: 'Good Friday', type: 'holiday' },
-        '2025-05-12': { title: 'Buddha Purnima', type: 'holiday' },
-        '2025-06-07': { title: 'Eid-ul-Zuha (Bakrid)', type: 'holiday' },
-        '2025-07-06': { title: 'Muharram', type: 'holiday' },
-        '2025-08-09': { title: 'Raksha Bandhan', type: 'holiday' },
-        '2025-08-14': { title: 'School Break', type: 'holiday' },
-        '2025-08-15': { title: 'Independence Day', type: 'holiday' },
-        '2025-08-16': { title: 'Janmashtami', type: 'holiday' },
-        '2025-08-17': { title: 'School Break', type: 'holiday' },
-        '2025-09-05': { title: 'Eid-e-Milad', type: 'holiday' },
-        '2025-10-01': { title: 'Maha Navami', type: 'holiday' },
-        '2025-10-02': { title: 'Gandhi Jayanti / Dussehra', type: 'holiday' },
-        '2025-10-20': { title: 'Diwali', type: 'holiday' },
-        '2025-10-22': { title: 'Govardhan Puja', type: 'holiday' },
-        '2025-10-23': { title: 'Bhai Dooj', type: 'holiday' },
-        '2025-11-05': { title: 'Gurunanak Jayanti', type: 'holiday' },
-        '2025-12-25': { title: 'Christmas', type: 'holiday' },
-        '2025-07-07': { title: 'Periodic Test 1', type: 'exam' },
-        '2025-07-08': { title: 'Periodic Test 1', type: 'exam' },
-        '2025-07-09': { title: 'Periodic Test 1', type: 'exam' },
-        '2025-07-10': { title: 'Periodic Test 1', type: 'exam' },
-        '2025-07-11': { title: 'Periodic Test 1', type: 'exam' },
-        '2025-07-12': { title: 'Periodic Test 1', type: 'exam' },
-        '2025-09-08': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-09': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-10': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-11': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-12': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-13': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-15': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-16': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-17': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-18': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-19': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-09-20': { title: 'Half-Yearly Exam', type: 'exam' },
-        '2025-12-01': { title: 'Periodic Test 2', type: 'exam' },
-        '2025-12-02': { title: 'Periodic Test 2', type: 'exam' },
-        '2025-12-03': { title: 'Periodic Test 2', type: 'exam' },
-        '2025-12-04': { title: 'Periodic Test 2', type: 'exam' },
-        '2025-12-05': { title: 'Periodic Test 2', type: 'exam' },
-        '2025-12-06': { title: 'Periodic Test 2', type: 'exam' },
-        '2026-02-16': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-17': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-18': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-19': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-20': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-21': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-23': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-24': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-25': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-26': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-27': { title: 'Annual Examination', type: 'exam' },
-        '2026-02-28': { title: 'Annual Examination', type: 'exam' },
-        '2025-04-07': { title: 'New Academic Session Begins', type: 'holiday' },
-        '2025-05-31': { title: 'Summer Vacation Starts', type: 'holiday' },
-        '2025-06-01': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-02': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-03': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-04': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-05': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-06': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-07': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-08': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-09': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-10': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-11': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-12': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-13': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-14': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-15': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-16': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-17': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-18': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-19': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-20': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-21': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-22': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-23': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-24': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-25': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-26': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-27': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-28': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-29': { title: 'Summer Vacation', type: 'holiday' },
-        '2025-06-30': { title: 'Summer Vacation Ends', type: 'holiday' },
-        '2026-01-01': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-02': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-03': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-04': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-05': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-06': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-07': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-08': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-09': { title: 'Winter Vacation', type: 'holiday' },
-        '2026-01-10': { title: 'Winter Vacation Ends', type: 'holiday' },
+        '2025-01-14': {
+            title: 'Hazrat Ali Jayanti / Makar Sankranti',
+            type: 'holiday'
+        },
+        '2025-01-26': {
+            title: 'Republic Day',
+            type: 'holiday'
+        },
+        '2025-02-26': {
+            title: 'Maha Shivaratri',
+            type: 'holiday'
+        },
+        '2025-03-13': {
+            title: 'Holi (Holiday)',
+            type: 'holiday'
+        },
+        '2025-03-14': {
+            title: 'Holi (Dhuleti)',
+            type: 'holiday'
+        },
+        '2025-03-31': {
+            title: 'Eid-ul-Fitr',
+            type: 'holiday'
+        },
+        '2025-04-06': {
+            title: 'Ram Navami',
+            type: 'holiday'
+        },
+        '2025-04-10': {
+            title: 'Mahavir Jayanti',
+            type: 'holiday'
+        },
+        '2025-04-14': {
+            title: 'Dr. B. R. Ambedkar Jayanti',
+            type: 'holiday'
+        },
+        '2025-04-18': {
+            title: 'Good Friday',
+            type: 'holiday'
+        },
+        '2025-05-12': {
+            title: 'Buddha Purnima',
+            type: 'holiday'
+        },
+        '2025-06-07': {
+            title: 'Eid-ul-Zuha (Bakrid)',
+            type: 'holiday'
+        },
+        '2025-07-06': {
+            title: 'Muharram',
+            type: 'holiday'
+        },
+        '2025-08-09': {
+            title: 'Raksha Bandhan',
+            type: 'holiday'
+        },
+        '2025-08-14': {
+            title: 'School Break',
+            type: 'holiday'
+        },
+        '2025-08-15': {
+            title: 'Independence Day',
+            type: 'holiday'
+        },
+        '2025-08-16': {
+            title: 'Janmashtami',
+            type: 'holiday'
+        },
+        '2025-08-17': {
+            title: 'School Break',
+            type: 'holiday'
+        },
+        '2025-09-05': {
+            title: 'Eid-e-Milad',
+            type: 'holiday'
+        },
+        '2025-10-01': {
+            title: 'Maha Navami',
+            type: 'holiday'
+        },
+        '2025-10-02': {
+            title: 'Gandhi Jayanti / Dussehra',
+            type: 'holiday'
+        },
+        '2025-10-20': {
+            title: 'Diwali',
+            type: 'holiday'
+        },
+        '2025-10-22': {
+            title: 'Govardhan Puja',
+            type: 'holiday'
+        },
+        '2025-10-23': {
+            title: 'Bhai Dooj',
+            type: 'holiday'
+        },
+        '2025-11-05': {
+            title: 'Gurunanak Jayanti',
+            type: 'holiday'
+        },
+        '2025-12-25': {
+            title: 'Christmas',
+            type: 'holiday'
+        },
+        '2025-07-07': {
+            title: 'Periodic Test 1',
+            type: 'exam'
+        },
+        '2025-07-08': {
+            title: 'Periodic Test 1',
+            type: 'exam'
+        },
+        '2025-07-09': {
+            title: 'Periodic Test 1',
+            type: 'exam'
+        },
+        '2025-07-10': {
+            title: 'Periodic Test 1',
+            type: 'exam'
+        },
+        '2025-07-11': {
+            title: 'Periodic Test 1',
+            type: 'exam'
+        },
+        '2025-07-12': {
+            title: 'Periodic Test 1',
+            type: 'exam'
+        },
+        '2025-09-08': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-09': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-10': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-11': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-12': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-13': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-15': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-16': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-17': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-18': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-19': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-09-20': {
+            title: 'Half-Yearly Exam',
+            type: 'exam'
+        },
+        '2025-12-01': {
+            title: 'Periodic Test 2',
+            type: 'exam'
+        },
+        '2025-12-02': {
+            title: 'Periodic Test 2',
+            type: 'exam'
+        },
+        '2025-12-03': {
+            title: 'Periodic Test 2',
+            type: 'exam'
+        },
+        '2025-12-04': {
+            title: 'Periodic Test 2',
+            type: 'exam'
+        },
+        '2025-12-05': {
+            title: 'Periodic Test 2',
+            type: 'exam'
+        },
+        '2025-12-06': {
+            title: 'Periodic Test 2',
+            type: 'exam'
+        },
+        '2026-02-16': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-17': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-18': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-19': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-20': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-21': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-23': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-24': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-25': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-26': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-27': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2026-02-28': {
+            title: 'Annual Examination',
+            type: 'exam'
+        },
+        '2025-04-07': {
+            title: 'New Academic Session Begins',
+            type: 'holiday'
+        },
+        '2025-05-31': {
+            title: 'Summer Vacation Starts',
+            type: 'holiday'
+        },
+        '2025-06-01': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-02': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-03': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-04': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-05': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-06': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-07': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-08': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-09': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-10': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-11': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-12': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-13': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-14': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-15': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-16': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-17': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-18': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-19': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-20': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-21': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-22': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-23': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-24': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-25': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-26': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-27': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-28': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-29': {
+            title: 'Summer Vacation',
+            type: 'holiday'
+        },
+        '2025-06-30': {
+            title: 'Summer Vacation Ends',
+            type: 'holiday'
+        },
+        '2026-01-01': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-02': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-03': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-04': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-05': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-06': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-07': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-08': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-09': {
+            title: 'Winter Vacation',
+            type: 'holiday'
+        },
+        '2026-01-10': {
+            title: 'Winter Vacation Ends',
+            type: 'holiday'
+        },
     };
 
     function renderCalendar() {
         const year = currentDate.getFullYear();
         const month = currentDate.getMonth();
 
-        currentMonthYearEl.textContent = new Date(year, month).toLocaleString('en-IN', { month: 'long', year: 'numeric' });
+        currentMonthYearEl.textContent = new Date(year, month).toLocaleString('en-IN', {
+            month: 'long',
+            year: 'numeric'
+        });
         calendarGrid.innerHTML = '';
 
         const firstDayOfMonth = new Date(year, month, 1).getDay();
@@ -206,7 +521,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let day = 1; day <= daysInMonth; day++) {
             const dayEl = document.createElement('div');
-            dayEl.classList.add('p-2', 'rounded-lg', 'font-medium', 'text-slate-700', 'transition-colors', 'cursor-pointer', 'hover:bg-blue-200', 'tooltip-container', 'relative');
+            dayEl.classList.add('p-2', 'rounded-lg', 'font-medium', 'text-slate-700', 'transition-colors',
+                'cursor-pointer', 'hover:bg-blue-200', 'tooltip-container', 'relative');
             dayEl.textContent = day;
 
             const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
@@ -261,7 +577,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, {
+            threshold: 0.5
+        });
 
         observer.observe(counter);
     });
@@ -314,7 +632,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Add text part to the payload
         if (textPrompt) {
-            parts.push({ text: textPrompt });
+            parts.push({
+                text: textPrompt
+            });
         }
 
         // Convert image to base64 if available
@@ -327,13 +647,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-        
-        chatHistory.push({ role: "user", parts: parts });
 
-        const payload = { contents: chatHistory };
+        chatHistory.push({
+            role: "user",
+            parts: parts
+        });
+
+        const payload = {
+            contents: chatHistory
+        };
         // !! IMPORTANT: REPLACE with your actual Gemini API Key !!
         const apiKey = "AIzaSyB-UPmBpYoE0Eg2SKzxcX8PZnCTXxGgO9c"; // This is a placeholder.
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+        const apiUrl =
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
         // Utility function to convert file to Base64
         function toBase64(file) {
@@ -353,7 +679,9 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch(apiUrl, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify(payload)
                 });
 
@@ -392,3 +720,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+

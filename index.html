@@ -14,11 +14,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="main.js"></script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+
 
 </head>
 
@@ -27,7 +27,7 @@
     <header id="main-header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300 glass-card">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300">
             <a href="#" class="text-2xl font-bold text-blue-600 transition-all duration-300"
-                style="font-family: 'Montserrat' , sans-serif; font-optical-sizing: auto; font-style: normal;">
+                style="font-family: 'Montserrat'; font-optical-sizing: auto; font-style: normal;">
                 Ayodhya Academy
             </a>
             <div class="hidden md:flex space-x-6 text-base font-medium">
@@ -248,7 +248,6 @@
                 </div>
             </div>
         </section>
-        <!-- Staff Directory Section -->
         <section id="staff" class="py-16 md:py-24 fade-in">
             <div class="container mx-auto px-4">
                 <div class="text-center max-w-2xl mx-auto mb-12">
@@ -258,42 +257,96 @@
                         Our passionate educators are committed to nurturing the next generation of leaders.
                     </p>
                 </div>
+
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <!-- Staff Card 4 (Founder) -->
                     <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Head+of+Academics"
-                            alt="Head of Academics" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Late Smt. Neerja Mishra</h3>
-                        <p class="text-slate-600">Honourable Founder</p>
-                    </div>
-                    <!-- Staff Card 1 (Manager) -->
-                    <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Manager" alt="Manager Pradeep Tiwari"
-                            class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Mr. Pradeep Tiwari</h3>
-                        <p class="text-slate-600">Manager</p>
-                    </div>
-                    <!-- Staff Card 2 (Principal) -->
-                    <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/93c5fd/1e3a8a?text=Principal"
-                            alt="Principal Samaya Acahriya" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Ms. Samaya Acahriya</h3>
-                        <p class="text-slate-600">Principal</p>
-                    </div>
-                    <!-- Staff Card 3 (Vice Principal) -->
-                    <div
-                        class="text-center rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 duration-300 glass-card">
-                        <img src="https://placehold.co/200x200/60a5fa/1e3a8a?text=Vice+Principal"
-                            alt="Vice Principal Gitendra" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-                        <h3 class="text-xl font-bold">Mr. Gitendra</h3>
-                        <p class="text-slate-600">Vice Principal</p>
-                    </div>
+                        class="staff-card p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-lg glass-card flex flex-col justify-between hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="mb-4">
+                            <img src="https://shubhangverma.com/affiles/founder.jpg" alt="teacher"
+                                class="w-48 h-48 mx-auto rounded-full object-cover mb-4">
 
+                            <h3 class="text-xl font-bold">Late Smt. Neerja Mishra</h3>
+                            <p class="text-slate-600">Honourable Founder</p>
+                        </div>
 
+                        <div class="hidden-details overflow-hidden max-h-0 transition-max-h duration-500 ease-in-out">
+                            <hr class="my-4 border-t border-gray-600">
+                            <p class="text-sm text-gray-300 mb-2">DOB: January 1, 1980</p>
+                            <p class="mt-4 text-lg text-slate-600">
+                                Founded by the late Neerja Mishra on March 10, 2003, Ayodhya Academy is dedicated to
+                                providing quality education in semi-rural areas. The school, affiliated with CBSE since
+                                2011, offers Science, Commerce, and Humanities streams up to Class XII.
+
+                            </p>
+                        </div>
+                        <div class="flex justify-center space-x-4 mt-4">
+                            <a href="#" class="text-white hover:text-blue-500 transition-colors duration-300"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white hover:text-blue-500 transition-colors duration-300"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white hover:text-blue-500 transition-colors duration-300"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div
+                        class="staff-card p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-lg glass-card flex flex-col justify-between hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="mb-4">
+                            <img src="https://shubhangverma.com/affiles/management_img/1395479686.Mr.%20Pradeep%20Tiwari%20(Manager).jpg"
+                                alt="Manager Pradeep Tiwari" class="w-48 h-48 mx-auto rounded-full object-cover mb-4">
+                            <h3 class="text-xl font-bold">Mr. Pradeep Tiwari</h3>
+                            <p class="text-slate-600">Manager</p>
+                        </div>
+                        <div class="hidden-details overflow-hidden max-h-0 transition-max-h duration-500 ease-in-out">
+                            <hr class="my-4 border-t border-gray-600">
+                            <p class="text-sm text-gray-300 mb-2">DOB: March 15, 1975</p>
+                            <p class="mt-4 text-lg text-slate-600">
+                                Mr. Pradeep Tiwari brings a wealth of administrative experience to Ayodhya Academy. He
+                                is dedicated to managing the school's operations smoothly and ensuring a positive and
+                                productive environment for all staff and students. His commitment to the school's
+                                mission is unwavering.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="staff-card p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-lg glass-card flex flex-col justify-between hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="mb-4">
+                            <img src="https://shubhangverma.com/affiles/management_img/492069644.Mrs.%20Saumya%20Achari%20(Principal).jpg"
+                                alt="Principal Samaya Acahriya"
+                                class="w-48 h-48 mx-auto rounded-full object-cover mb-4">
+                            <h3 class="text-xl font-bold">Ms. Samaya Acahriya</h3>
+                            <p class="text-slate-600">Principal</p>
+                        </div>
+                        <div class="hidden-details overflow-hidden max-h-0 transition-max-h duration-500 ease-in-out">
+                            <hr class="my-4 border-t border-gray-600">
+                            <p class="text-sm text-gray-300 mb-2">DOB: June 22, 1982</p>
+                            <p class="mt-4 text-lg text-slate-600">
+                                Ms. Samaya Acahriya is a passionate educational leader with over 20 years of experience.
+                                As Principal, she is responsible for the academic and co-curricular programs. Her
+                                innovative approach to teaching and her focus on student-centric education have made a
+                                significant impact on the school.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="staff-card p-4 bg-white/5 border border-white/10 rounded-lg backdrop-blur-lg glass-card flex flex-col justify-between hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <div class="mb-4">
+                            <img src="https://shubhangverma.com/affiles/management_img/157283914.jk.jpg"
+                                alt="Vice Principal Gitendra" class="w-48 h-48 mx-auto rounded-full object-cover mb-4">
+                            <h3 class="text-xl font-bold">Mr. Gitendra</h3>
+                            <p class="text-slate-600">Vice Principal</p>
+                        </div>
+                        <div class="hidden-details overflow-hidden max-h-0 transition-max-h duration-500 ease-in-out">
+                            <hr class="my-4 border-t border-gray-600">
+                            <p class="text-sm text-gray-300 mb-2">DOB: September 5, 1978</p>
+                            <p class="mt-4 text-lg text-slate-600">
+                                Mr. Gitendra is the Vice Principal and a driving force behind the school's disciplinary
+                                and academic standards. His dedication to maintaining a disciplined and structured
+                                environment ensures that students can focus on their studies and personal development.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
@@ -560,7 +613,6 @@
 
 
 
-        <!-- Contact Section -->
         <section id="contact" class="py-16 md:py-24 fade-in">
             <div class="container mx-auto px-4">
                 <div class="text-center max-w-2xl mx-auto mb-12">
@@ -586,7 +638,6 @@
                                 class="text-blue-600 hover:underline">ayodhyaacademy@gmail.com</a>
                         </p>
                         <div class="mt-6 h-64 w-full rounded-md overflow-hidden shadow-md">
-                            <!-- Embedded Google Map -->
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4299.1921125895915!2d82.19066697602722!3d26.782955865653776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a07e7ffc682e3%3A0x878d41ec767e16b8!2sAyodhya%20Academy!5e1!3m2!1sen!2sin!4v1756104356366!5m2!1sen!2sin"
                                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
@@ -598,76 +649,31 @@
             </div>
         </section>
 
+
     </main>
 
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <h4 class="text-xl font-bold mb-4">Ayodhya Academy</h4>
-                <p class="text-sm text-gray-400">
-                    Empowering minds, shaping futures. A premier CBSE-affiliated school in Ayodhya.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#about" class="hover:text-blue-400 transition-colors">About Us</a></li>
-                    <li><a href="#academics" class="hover:text-blue-400 transition-colors">Academics</a></li>
-                    <li><a href="#facilities" class="hover:text-blue-400 transition-colors">Facilities</a></li>
-                    <li><a href="#contact" class="hover:text-blue-400 transition-colors">Contact Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-xl font-bold mb-4">Contact Info</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><i class="fas fa-map-marker-alt mr-2"></i> 123 School Lane, Ayodhya, UP 224001</li>
-                    <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@ayodhyaacademy.edu"
-                            class="hover:text-blue-400 transition-colors">info@ayodhyaacademy.edu</a></li>
-                    <li><i class="fas fa-phone-alt mr-2"></i> +91 1234 567 890</li>
-                </ul>
-                <div class="mt-4 flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                            class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i
-                            class="fab fa-linkedin-in"></i></a>
+    <footer>
+        <section class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4 text-center glass-card">
+                <div class="max-w-2xl mx-auto">
+                    <p class="text-slate-800 text-sm mb-2">&copy; <span id="currentYear"></span> Ayodhya Academy. All
+                        Rights
+                        Reserved.</p>
+                    <p class="text-slate-800 text-lg flex items-center justify-center space-x-2">
+                        <span class="">Crafted By:</span>
+                        <span style="font-family: 'Montserrat' ;">Utkarsh</span>
+                        <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.62.0/files/dark/gemini-color.png"
+                            alt="Gemini Logo" class="h-6">
+                        <span>&infin;</span>
+                        <img src="https://img.icons8.com/?size=100&id=FBO05Dys9QCg&format=png&color=000000"
+                            alt="ChatGPT Logo" class="h-6">
+                    </p>
                 </div>
             </div>
-            <div>
-                <h4 class="text-xl font-bold mb-4">Newsletter</h4>
-                <p class="text-sm text-gray-400">
-                    Stay up-to-date with our latest news and events.
-                </p>
-                <form class="mt-4">
-                    <input type="email" placeholder="Your email address"
-                        class="w-full p-2 rounded-md border border-gray-600 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <button type="submit"
-                        class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-md transition-colors">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-        <div class="mt-8 text-center text-sm text-gray-500 border-t border-gray-700 pt-8">
-            &copy; 2024 Ayodhya Academy. All Rights Reserved.
-        </div>
+        </section>
     </footer>
 
-    <script src="main.js"></script>
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+
 </body>
 
 </html>
