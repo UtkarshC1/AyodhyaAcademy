@@ -375,3 +375,37 @@ h6 {
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
+@media (max-width: 768px) {
+  /* Adjust the main calendar container */
+  .container {
+    padding: 0 10px; /* Add some padding to prevent the calendar from touching the screen edges */
+  }
+
+  /* Make the header elements flexible */
+  .header {
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center them horizontally */
+    text-align: center; /* Center the text */
+  }
+
+  /* Ensure the navigation is centered below the month */
+  .navigation {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px; /* Add space between the month and the navigation arrows */
+  }
+
+  /* Adjust the day grid */
+  .week,
+  .dates {
+    grid-template-columns: repeat(7, 1fr); /* Use grid to create 7 equal-width columns */
+    font-size: 12px; /* Reduce font size for readability on smaller screens */
+  }
+
+  /* Make sure each day block fits the screen */
+  .week li,
+  .dates li {
+    padding: 5px; /* Adjust padding to make the cells smaller */
+    height: 40px; /* Set a fixed height for consistency */
+  }
+}
