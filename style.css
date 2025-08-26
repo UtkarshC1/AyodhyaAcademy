@@ -1,3 +1,13 @@
+/*
+ * This stylesheet has been refactored to use a combination of responsive units
+ * like rem, vw, and percentages, as well as fixed units like px where
+ * appropriate, to ensure a robust and functional design across all devices.
+ * All duplicate and problematic declarations have been removed.
+ */
+
+/* ================================
+    Root Variables & Animations
+    ================================= */
 :root {
     --primary-color: #1a237e;
     --secondary-color: #e0e0e0;
@@ -5,50 +15,34 @@
     --bg-color: #121212;
 }
 
+/* Button Glow Animation */
+@keyframes glowing-blue {
+    0% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 10px rgba(59, 130, 246, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    }
+}
+
+/* Accent Text Glow Animation */
 @keyframes glowing-accent {
     0% {
-        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
+        text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
     }
-
     50% {
-        text-shadow: 0 0 10px #64b5f6, 0 0 20px #64b5f6;
+        text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
     }
-
     100% {
-        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
+        text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
     }
 }
 
 .text-glow {
-    text-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #0ff, 0 0 25px #0ff, 0 0 30px #0ff, 0 0 35px #0ff, 0 0 40px #0ff;
     animation: glowing-accent 2s ease-in-out infinite;
-}
-
-/* Your existing CSS for animations and other things can stay here, but replace the root and glowing-blue keyframes with this: */
-:root {
-    --primary-color: #1a237e;
-    --secondary-color: #e0e0e0;
-    --accent-color: #64b5f6;
-    --bg-color: #121212;
-}
-
-@keyframes glowing-accent {
-    0% {
-        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
-    }
-
-    50% {
-        text-shadow: 0 0 10px #64b5f6, 0 0 20px #64b5f6;
-    }
-
-    100% {
-        text-shadow: 0 0 5px #64b5f6, 0 0 10px #64b5f6;
-    }
-}
-
-.staff-card:hover .hidden-details {
-    max-height: 500px;
-    /* A value large enough to fit all content */
 }
 
 /* ================================
@@ -63,74 +57,50 @@ body {
 }
 
 /* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 0.5rem; /* Using rem for consistency */
 }
-
 ::-webkit-scrollbar-track {
     background: #eef2ff;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #93c5fd;
-    border-radius: 4px;
+    border-radius: 0.25rem;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #60a5fa;
 }
 
 /* ================================
-    Keyframe Animations
+    Keyframe Animations & Transitions
     ================================= */
-/* Button Glow */
-@keyframes glowing-blue {
-    0% {
-        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-    }
-
-    50% {
-        box-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 10px rgba(59, 130, 246, 0.7);
-    }
-
-    100% {
-        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-    }
-}
-
 .animate-glow-blue {
     animation: glowing-blue 2s infinite;
 }
 
-/* Hero Fade In */
+/* Fade In From Top */
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-2%); /* Using percentage for relative movement */
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Fade In From Bottom */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(2%); /* Using percentage for relative movement */
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -151,17 +121,15 @@ h6 {
     opacity: 0;
 }
 
+/* Font sizes using clamp for fluid responsiveness */
 .hero-title {
     font-size: clamp(1.5rem, 5vw, 3rem);
 }
-
 .hero-subtitle {
     font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
-/* ================================
-    Header Scroll Effects
-    ================================= */
+/* Header scroll effects */
 .header-scrolled {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -169,25 +137,20 @@ h6 {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 }
-
 .header-scrolled a {
     font-size: 0.875rem;
 }
-
 .header-scrolled .text-2xl {
     font-size: 1.5rem;
 }
 
-/* ================================
-    Fade In Sections
-    ================================= */
+/* Fade In sections on scroll */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(2%);
     transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
 .fade-in.is-visible {
     opacity: 1;
     transform: translateY(0);
@@ -207,9 +170,8 @@ h6 {
     max-width: 100%;
     margin: 0.5rem;
 }
-
 .glass-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.5%);
     box-shadow: 0 12px 24px rgba(31, 38, 135, 0.4);
 }
 
@@ -219,15 +181,12 @@ h6 {
 .event-holiday {
     background-color: rgba(252, 165, 165, 0.6);
 }
-
 .event-exam {
     background-color: rgba(252, 211, 77, 0.6);
 }
-
 .event-function {
     background-color: rgba(147, 197, 253, 0.6);
 }
-
 .event-ptm {
     background-color: rgba(167, 139, 250, 0.6);
 }
@@ -236,14 +195,13 @@ h6 {
 .tooltip-container {
     position: relative;
 }
-
 .tooltip-text {
     visibility: hidden;
     background-color: #1f2937;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
-    padding: 5px 10px;
+    border-radius: 0.375rem;
+    padding: 0.3rem 0.6rem;
     position: absolute;
     z-index: 10;
     bottom: 125%;
@@ -253,12 +211,10 @@ h6 {
     transition: opacity 0.3s;
     white-space: nowrap;
 }
-
 .tooltip-container:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
-
 .tooltip-text::after {
     content: "";
     position: absolute;
@@ -281,7 +237,6 @@ h6 {
     height: 24px;
     animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
     to {
         transform: rotate(360deg);
@@ -294,7 +249,6 @@ h6 {
 .gallery-image-wrapper {
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
 .gallery-image-wrapper:hover {
     transform: scale(1.1);
 }
@@ -312,7 +266,6 @@ h6 {
     transition: opacity 0.5s, visibility 0.5s, transform 0.3s ease-out;
     transform: translateY(20px);
 }
-
 #back-to-top.show {
     opacity: 1;
     visibility: visible;
@@ -336,13 +289,11 @@ h6 {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
-
 @media(min-width: 768px) {
     .counters-container {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
 .counter-card {
     display: flex;
     flex-direction: column;
@@ -358,54 +309,54 @@ h6 {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .counter-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.5%);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
-
 .counter-icon {
     width: 60px;
     height: 60px;
 }
-
 .counter {
     font-size: 2rem;
     color: #2563eb;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
+/* Staff Card Hover and Click Effect */
+.staff-card .hidden-details {
+    /* Set up the transition for a smooth expand/collapse effect */
+    transition: max-height 0.4s ease-in-out;
+}
+.staff-card:hover .hidden-details,
+.staff-card.is-expanded .hidden-details {
+    max-height: 500px; /* A value large enough to fit all content */
+}
 @media (max-width: 768px) {
-  /* Adjust the main calendar container */
-  .container {
-    padding: 0 10px; /* Add some padding to prevent the calendar from touching the screen edges */
-  }
-
-  /* Make the header elements flexible */
-  .header {
-    flex-direction: column; /* Stack the elements vertically */
-    align-items: center; /* Center them horizontally */
-    text-align: center; /* Center the text */
-  }
-
-  /* Ensure the navigation is centered below the month */
-  .navigation {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px; /* Add space between the month and the navigation arrows */
-  }
-
-  /* Adjust the day grid */
-  .week,
-  .dates {
-    grid-template-columns: repeat(7, 1fr); /* Use grid to create 7 equal-width columns */
-    font-size: 12px; /* Reduce font size for readability on smaller screens */
-  }
-
-  /* Make sure each day block fits the screen */
-  .week li,
-  .dates li {
-    padding: 5px; /* Adjust padding to make the cells smaller */
-    height: 40px; /* Set a fixed height for consistency */
-  }
+    /* Adjust the main calendar container */
+    .container {
+        padding: 0 10%;
+    }
+    /* Make the header elements flexible */
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    /* Ensure the navigation is centered below the month */
+    .navigation {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    /* Adjust the day grid */
+    .week, .dates {
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 0.75rem;
+    }
+    /* Make sure each day block fits the screen */
+    .week li, .dates li {
+        padding: 5px;
+        height: 40px;
+    }
 }
