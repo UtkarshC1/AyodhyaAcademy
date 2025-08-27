@@ -14,8 +14,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
 
 
@@ -68,12 +69,22 @@
     </header>
 
     <main>
-        <section class="relative h-[60vh] flex items-center justify-center text-center text-white p-4 overflow-hidden"
-            style="background-image: url('https://shubhangverma.com/affiles/assets/hero-bg1.jpg'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-blue-950 bg-opacity-75"></div>
+        <section id="hero-slideshow"
+            class="relative h-[60vh] flex items-center justify-center text-center text-white p-4 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://shubhangverma.com/affiles/assets/hero-bg1.jpg" alt="School Hero Image 1"
+                    class="slideshow-image active">
+                <img src="https://placehold.co/1920x1080/1d4ed8/eff6ff?text=School+Image+2" alt="School Hero Image 2"
+                    class="slideshow-image">
+                <img src="https://placehold.co/1920x1080/3b82f6/eff6ff?text=School+Image+3" alt="School Hero Image 3"
+                    class="slideshow-image">
+            </div>
+
+            <div class="absolute inset-0 bg-blue-950 bg-opacity-40"></div>
+
             <div class="relative z-10 flex items-center justify-center h-full w-full">
                 <div
-                    class="max-w-4xl p-8 rounded-3xl backdrop-blur-md bg-white/20 border border-white/20 shadow-lg text-center text-white">
+                    class="max-w-4xl p-8 rounded-3xl backdrop-blur-md bg-white/20 border border-white/20 shadow-lg text-center text-white hero-card">
                     <h1
                         class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-4 hero-title">
                         Empowering Minds, Shaping Futures
@@ -81,7 +92,7 @@
                     <p class="text-lg sm:text-xl md:text-2xl font-light mb-8 max-w-prose mx-auto hero-subtitle">
                         A premier CBSE-affiliated school dedicated to academic excellence from Nursery to Class 12.
                     </p>
-                    <a href="#admissions"
+                    <a href="admissions.html"
                         class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 animate-glow-blue hero-button">
                         Admissions Open
                     </a>
@@ -656,7 +667,7 @@
         <section class="py-16 md:py-24 fade-in">
             <div class="container mx-auto px-4 text-center glass-card">
                 <div class="max-w-2xl mx-auto">
-                    <p class="text-slate-800 text-sm mb-2">&copy; <span id="currentYear"></span> Ayodhya Academy. All
+                    <p class="text-slate-800 text-sm mb-2">© <span id="currentYear"></span> Ayodhya Academy. All
                         Rights
                         Reserved.</p>
                     <p class="text-slate-800 text-lg flex items-center justify-center space-x-2">
@@ -664,7 +675,7 @@
                         <span style="font-family: 'Montserrat' ;">Utkarsh</span>
                         <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.62.0/files/dark/gemini-color.png"
                             alt="Gemini Logo" class="h-6">
-                        <span>&infin;</span>
+                        <span>∞</span>
                         <img src="https://img.icons8.com/?size=100&id=FBO05Dys9QCg&format=png&color=000000"
                             alt="ChatGPT Logo" class="h-6">
                     </p>
