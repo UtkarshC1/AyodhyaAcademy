@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayodhya Academy - Admission Form</title>
+
+    <link rel="icon" href="Assets/logo.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS is loaded via CDN for a self-contained file -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(to right, #e0f2fe, #dbeafe, #c7d2fe);
+            margin: 0;
+            padding: 0;
+            color: #1f2937;
+        }
+
+        /* Glass Card Styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-0.5%);
+            box-shadow: 0 12px 24px rgba(31, 38, 135, 0.4);
+        }
+
+        /* Form-specific styles */
+        .form-container {
+            max-width: 960px;
+        }
+
+        /* Button Glow Animation */
+        @keyframes glowing-blue {
+            0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 10px rgba(59, 130, 246, 0.7); }
+            100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+        }
+
+        .button-glow {
+            animation: glowing-blue 2s infinite;
+        }
+
+        /* Header scroll effects */
+        .header-scrolled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        /* New styles for the select lists to match button design */
+        .custom-select-wrapper {
+            position: relative;
+        }
+        
+        .custom-select-wrapper::after {
+            content: '▼';
+            font-size: 0.75rem;
+            color: #4b5563;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+    </style>
+
+    <!-- main.js script for mobile menu and scroll effects -->
+    <script>
+        // Ensure the DOM is fully loaded before executing the script.
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ------------------------------------------------------------------
+            // Mobile Menu Functionality
+            // ------------------------------------------------------------------
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuLinks = mobileMenu.querySelectorAll('a');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // ------------------------------------------------------------------
+            // Scroll-based Header
+            // ------------------------------------------------------------------
+            const mainHeader = document.getElementById('main-header');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    mainHeader.classList.add('header-scrolled');
+                } else {
+                    mainHeader.classList.remove('header-scrolled');
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="text-slate-900 antialiased">
+
+    <!-- Header Section -->
+    <header id="main-header" class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300 glass-card">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center transition-all duration-300">
+            <a href="#" class="text-2xl font-bold text-blue-600 transition-all duration-300"
+                style="font-family: 'Montserrat'; font-optical-sizing: auto; font-style: normal;">
+                Ayodhya Academy
+            </a>
+            <div class="hidden md:flex space-x-6 text-base font-medium">
+                <a href="#about" class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">About Us</a>
+                <a href="#academics"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Academics</a>
+                <a href="#facilities"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Facilities</a>
+                <a href="#gallery"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Gallery</a>
+                <a href="#news" class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">News &
+                    Events</a>
+                <a href="#staff" class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Staff</a>
+                <a href="#admissions"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Admissions</a>
+                <a href="#contact"
+                    class="hover:text-blue-600 transition-colors duration-300 hover:scale-105">Contact</a>
+            </div>
+            <button id="mobile-menu-button"
+                class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-300 transform active:scale-95">
+                <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2 glass-card">
+            <a href="#about" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">About Us</a>
+            <a href="#academics" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Academics</a>
+            <a href="#facilities" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Facilities</a>
+            <a href="#gallery" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Gallery</a>
+            <a href="#news" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">News & Events</a>
+            <a href="#staff" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Staff</a>
+            <a href="#admissions" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Admissions</a>
+            <a href="#contact" class="block px-4 py-2 text-base hover:bg-gray-100 transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Admission Form Section -->
+    <main class="min-h-screen py-12 px-4 flex items-center justify-center">
+        <div class="form-container w-full p-8 md:p-12 rounded-2xl glass-card">
+
+            <!-- Form Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-800 leading-tight">
+                    Admission Form
+                </h1>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Please fill out this form to apply for admission to our school.</p>
+            </div>
+
+            <!-- The Form -->
+            <form action="#" method="post" enctype="multipart/form-data" class="space-y-6">
+
+                <!-- Student Information Section -->
+                <div class="bg-blue-50 p-6 rounded-xl">
+                    <h2 class="text-xl font-bold text-blue-700 mb-4">1. Student Information</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="studentName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="studentName" name="studentName" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="custom-select-wrapper">
+                            <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                            <select id="gender" name="gender" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="custom-select-wrapper">
+                            <label for="classApplied" class="block text-sm font-medium text-gray-700">Class Applied For</label>
+                            <select id="classApplied" name="classApplied" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="" disabled selected>Select Class</option>
+                                <option value="Nursery">Nursery</option>
+                                <option value="KG">KG</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Class 7">Class 7</option>
+                                <option value="Class 8">Class 8</option>
+                                <option value="Class 9">Class 9</option>
+                                <option value="Class 10">Class 10</option>
+                                <option value="Class 11">Class 11</option>
+                                <option value="Class 12">Class 12</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parent/Guardian Information Section -->
+                <div class="bg-green-50 p-6 rounded-xl">
+                    <h2 class="text-xl font-bold text-green-700 mb-4">2. Parent/Guardian Information</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fatherName" class="block text-sm font-medium text-gray-700">Father's Name</label>
+                            <input type="text" id="fatherName" name="fatherName" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="motherName" class="block text-sm font-medium text-gray-700">Mother's Name</label>
+                            <input type="text" id="motherName" name="motherName" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                            <textarea id="address" name="address" rows="3" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"></textarea>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Academic Information Section -->
+                <div class="bg-yellow-50 p-6 rounded-xl">
+                    <h2 class="text-xl font-bold text-yellow-700 mb-4">3. Previous Academic Details</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="sm:col-span-2">
+                            <label for="prevSchool" class="block text-sm font-medium text-gray-700">Name of Previous School</label>
+                            <input type="text" id="prevSchool" name="prevSchool"
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+                        <div>
+                            <label for="lastClass" class="block text-sm font-medium text-gray-700">Last Class Completed</label>
+                            <input type="text" id="lastClass" name="lastClass"
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+                        <div>
+                            <label for="prevResult" class="block text-sm font-medium text-gray-700">Result (e.g., Grade/Percentage)</label>
+                            <input type="text" id="prevResult" name="prevResult"
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Uploads -->
+                <div class="bg-red-50 p-6 rounded-xl">
+                    <h2 class="text-xl font-bold text-red-700 mb-4">4. Required Documents</h2>
+                    <p class="text-sm text-gray-600 mb-4">Please upload the following documents (PDF, JPG, PNG).</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="birthCertificate" class="block text-sm font-medium text-gray-700">Birth Certificate (Student)</label>
+                            <input type="file" id="birthCertificate" name="birthCertificate" accept=".pdf, .jpg, .jpeg, .png"
+                                class="mt-1 block w-full">
+                        </div>
+                        <div>
+                            <label for="reportCard" class="block text-sm font-medium text-gray-700">Previous Report Card</label>
+                            <input type="file" id="reportCard" name="reportCard" accept=".pdf, .jpg, .jpeg, .png"
+                                class="mt-1 block w-full">
+                        </div>
+                        <div>
+                            <label for="studentPhoto" class="block text-sm font-medium text-gray-700">Passport Photo (Student)</label>
+                            <input type="file" id="studentPhoto" name="studentPhoto" accept=".jpg, .jpeg, .png"
+                                class="mt-1 block w-full">
+                        </div>
+                        <div>
+                            <label for="idProof" class="block text-sm font-medium text-gray-700">ID Proof (Parent/Guardian)</label>
+                            <input type="file" id="idProof" name="idProof" accept=".pdf, .jpg, .jpeg, .png"
+                                class="mt-1 block w-full">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Declaration & Submission -->
+                <div class="bg-purple-50 p-6 rounded-xl">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="declaration" name="declaration" type="checkbox" required
+                                class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="declaration" class="font-medium text-gray-700">I declare that the information provided is true and correct to the best of my knowledge.</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit"
+                        class="w-full sm:w-auto px-6 py-3 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 button-glow">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <section class="py-16 md:py-24 fade-in">
+            <div class="container mx-auto px-4 text-center glass-card">
+                <div class="max-w-2xl mx-auto">
+                    <p class="text-slate-800 text-sm mb-2">&copy; <span id="currentYear"></span> Ayodhya Academy. All
+                        Rights
+                        Reserved.</p>
+                    <p class="text-slate-800 text-lg flex items-center justify-center space-x-2">
+                        <span class="">Crafted By:</span>
+                        <span style="font-family: 'Montserrat' ;">Utkarsh</span>
+                        <img src="https://registry.npmmirror.com/@lobehub/icons-static-png/1.62.0/files/dark/gemini-color.png"
+                            alt="Gemini Logo" class="h-6">
+                        <span>&infin;</span>
+                        <img src="https://img.icons8.com/?size=100&id=FBO05Dys9QCg&format=png&color=000000"
+                            alt="ChatGPT Logo" class="h-6">
+                    </p>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+</body>
+</html>
