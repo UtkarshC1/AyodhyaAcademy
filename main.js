@@ -1,5 +1,27 @@
 // Ensure the DOM is fully loaded before executing the script.
 document.addEventListener('DOMContentLoaded', () => {
+    // ------------------------------------------------------------------
+    // Hero Section Slideshow
+    // ------------------------------------------------------------------
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slideshow-image');
+
+    function showSlides() {
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].classList.add('active');
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+
+    // Start the slideshow
+    showSlides();
 
     // ------------------------------------------------------------------
     // Mobile Menu Functionality
@@ -521,7 +543,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let day = 1; day <= daysInMonth; day++) {
             const dayEl = document.createElement('div');
-            dayEl.classList.add('p-2', 'rounded-lg', 'font-medium', 'text-slate-700', 'transition-colors',
+            dayEl.classList.add('py-2', 'px-1', 'rounded-lg', 'font-medium', 'text-slate-700', 'transition-colors',
                 'cursor-pointer', 'hover:bg-blue-200', 'tooltip-container', 'relative');
             dayEl.textContent = day;
 
@@ -719,16 +741,16 @@ document.addEventListener('DOMContentLoaded', () => {
             solutionOutput.innerHTML = '<p class="text-center text-red-500">Sorry, something went wrong. Please try again.</p>';
         }
     });
-});
 
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    // ------------------------------------------------------------------
+    // Smooth scrolling for anchor links
+    // ------------------------------------------------------------------
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 });
-
